@@ -1,3 +1,4 @@
+// compileCompressed: ../../build/main.min.css;
 @import "partials/_globals";
 
 // Landing Banner
@@ -14,11 +15,24 @@
     transform: translateY(-50%);
   }
 
+  h1, h2, h3 { color: #fff; }
+
   h3 {
     position: absolute;
     bottom: 1rem;
     right: 2rem;
   }
+}
+
+#container {
+  width: 65%;
+  margin: 0 auto;
+  padding: 8rem 0;
+}
+
+#map {
+  height: 40rem;
+  width: 100%;
 }
 
 @import "partials/_media-queries";

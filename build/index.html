@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hiking Around San Diego</title>
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt|Zilla+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/styles/main.min.css">
+    <link rel="stylesheet" href="./main.min.css">
   </head>
   <body>
-
     <section id="landing-banner">
       <div class="callout">
         <h2>HIKING</h2>
@@ -18,8 +18,14 @@
       <h3>coming soon...</h3>
     </section>
 
-  </body>
+    <main id="container">
+      <h2>Test Title</h2>
+      <div id="map"></div>
+    </main>
 
+  </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFs-65AHP7UArKMj09zDoL9labRZTeE1Q&callback=initMap"
+    async defer></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -30,4 +36,5 @@
     ga('send', 'pageview');
 
   </script>
+  <script src="../src/scripts/main.js" charset="utf-8"></script>
 </html>
