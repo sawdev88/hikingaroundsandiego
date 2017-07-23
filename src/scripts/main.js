@@ -1,8 +1,10 @@
 // Map
-var map;
 initMap = () => {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 32.715736, lng: -117.161087},
+  let mapList = document.querySelector('.map-list ul');
+  let initialCoords = {lat: 32.715736, lng: -117.161087};
+
+  let map = new google.maps.Map(document.getElementById('map'), {
+    center: initialCoords,
     zoom: 11,
   });
   locations.map(function (loc) {
@@ -13,26 +15,43 @@ initMap = () => {
       id: loc.index
     })
     marker.addListener('click', function(x, i) {
-      console.log(this.id);
+      zoomInOnMap(map, loc.coords);
     });
   });
 
   // Map list
-  let mapList = document.querySelector('.map-list ul');
   locations.map(function (loc, i) {
     // Create list items
     let el = document.createElement('li');
-    el.innerHTML = loc.title;
+    el.innerHTML = `${loc.title} ${'<br />'} ${loc.address1} ${'<br />'} ${loc.address2}`;
     el.setAttribute('index', loc.index)
     mapList.appendChild(el);
+
+    // Highlist selected location on map
     el.addEventListener('click', function () {
-      map.setZoom(15);
-      map.panTo(loc.coords)
+      clearMapList();
+      zoomInOnMap(map, loc.coords);
+      this.classList.add('selected');
     })
+  })
+
+  document.querySelector('.clear-list').addEventListener('click', function() {
+    zoomInOnMap(map, {lat: 32.715736, lng: -117.161087}, 11);
+    clearMapList()
   })
 }
 
-let mapListItem = document.querySelectorAll('.map-list li');
+zoomInOnMap = (map, coords, zoom = 15) => {
+  map.setZoom(zoom)
+  map.panTo(coords)
+}
+
+clearMapList = () => {
+  var list = document.querySelectorAll('.map-list li');
+  [].forEach.call(list, function(el) {
+    el.classList.remove('selected');
+  })
+}
 
 // Scroll Effect
 window.addEventListener('scroll', function () {

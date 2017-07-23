@@ -1,3 +1,5 @@
+$ease: .3s ease-in-out;
+
 body, html {
   margin: 0;
   padding: 0;
@@ -8,7 +10,7 @@ html {
   font-family: 'Zilla Slab', serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, ul, li {
   margin: 0;
   padding: 0;
   color: #333;
@@ -26,6 +28,26 @@ h2 {
 
 h3 {
   font-size: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+li, a, button {
+  transition: $ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+button {
+  font-family: 'Zilla Slab', serif;
 }
 
 .row {

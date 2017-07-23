@@ -54,13 +54,53 @@
 }
 
 // Map
+.map-container {
+  height: 40rem;
+  overflow: hidden;
+}
+
 .map-list {
   height: 100%;
   flex: 1;
+  padding-right: 2rem;
+  position: relative;
+  overflow-y: scroll;
+
+  li {
+    padding: 1rem;
+    border-radius: 5px;
+
+    &:hover {
+      background: rgba(234,245,248,.4);
+    }
+  }
+
+  .clear-list {
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    left: .5rem;
+    padding: 1rem 0;
+    border: none;
+    color: #fff;
+    background: #ddd;
+
+    &:hover {
+      background: #aaa;
+    }
+  }
+
+  .selected {
+    background: #eaf5f8;
+
+    &:hover {
+      background: #eaf5f8;
+    }
+  }
 }
 
 #map {
-  height: 40rem;
+  height: 100%;
   flex: 2;
 }
 
