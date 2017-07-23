@@ -27,3 +27,9 @@ h2 {
 h3 {
   font-size: 2rem;
 }
+
+.row {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}

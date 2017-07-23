@@ -9,21 +9,32 @@
   </head>
   <body>
     <section id="landing-banner">
-      <div class="callout">
+      <div class="callout opacity-effect">
         <h2>HIKING</h2>
         <h1>San Diego</h1>
         <h2>AROUND</h2>
       </div>
 
-      <h3>coming soon...</h3>
+      <div class="down-arrow opacity-effect">
+        <i class="fa fa-chevron-down"></i>
+      </div>
     </section>
 
     <main id="container">
       <h2>Test Title</h2>
-      <div id="map"></div>
+
+      <div class="map-container row">
+        <div class="map-list">
+          <ul></ul>
+        </div>
+        <div id="map"></div>
+      </div>
     </main>
 
   </body>
+  <script src="https://use.fontawesome.com/0b488e2512.js"></script>
+  <script src="../src/scripts/locations.js" charset="utf-8"></script>
+  <script src="../src/scripts/main.js" charset="utf-8"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFs-65AHP7UArKMj09zDoL9labRZTeE1Q&callback=initMap"
     async defer></script>
   <script>
@@ -36,5 +47,4 @@
     ga('send', 'pageview');
 
   </script>
-  <script src="../src/scripts/main.js" charset="utf-8"></script>
 </html>

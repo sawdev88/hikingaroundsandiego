@@ -1,9 +1,9 @@
 // compileCompressed: ../../build/main.min.css;
-@import "partials/_globals";
+@import "./partials/_globals";
 
 // Landing Banner
 #landing-banner {
-  background: url('../img/bg.jpg') no-repeat center center / cover;
+  background: url('../img/bg.jpg') no-repeat center center fixed / cover;
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -13,6 +13,29 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .down-arrow {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    height: 3rem;
+    opacity: .5;
+
+    i {
+      position: relative;
+      color: #fff;
+      animation: bounce 1s infinite alternate;
+    }
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0rem);
+      }
+      to {
+        transform: translateY(1.5rem);
+      }
+    }
   }
 
   h1, h2, h3 { color: #fff; }
@@ -30,9 +53,15 @@
   padding: 8rem 0;
 }
 
-#map {
-  height: 40rem;
-  width: 100%;
+// Map
+.map-list {
+  height: 100%;
+  flex: 1;
 }
 
-@import "partials/_media-queries";
+#map {
+  height: 40rem;
+  flex: 2;
+}
+
+@import "./partials/_media-queries";
